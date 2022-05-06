@@ -1,7 +1,7 @@
 {{define "main"}}
 <section class="cds--custom--leadspace">
     <div class="cds--custom--bg"></div>
-    <div class="cds--grid--full-width">
+    <div class="cds--grid">
         <div class="cds--row">
             <div class="cds--column">
                 <h1 class="cds--custom--leadspace--heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
@@ -26,77 +26,49 @@
 
 </section>
 <section >
-    <div class="cds--grid--full-width">
+    <div class="cds--grid">
         <div class="cds--row">
-            <div class="cds--col-lg-2">
+            <div class="cds--col-md-2 cds--col-lg-2">
                 <h5 class="section-heading">
                     Duis euismod efficitur purus, dapibus rhoncus mi tristique sit amet.
                 </h5>
 
             </div>
-            <div class="cds--col-lg">
+            <div class="cds--col-md cds--col-lg">
                 <p>Suspendisse potenti. In vel felis quam. Nulla erat nisl, aliquam ut velit non, venenatis porttitor dolor. Nullam vitae risus vel risus sagittis cursus. Fusce sit amet mi mollis, facilisis justo fermentum, tincidunt dolor. Mauris gravida libero a ligula molestie tincidunt. Duis sodales massa vitae felis pretium tempus. Praesent venenatis, dui vitae volutpat malesuada, orci nulla gravida dui, at faucibus lacus urna at sapien. Curabitur venenatis vitae risus vel convallis. Quisque vel nisl at lorem suscipit fermentum eu eget ex. Vivamus id orci non massa pulvinar laoreet. Fusce vehicula est at ligula pulvinar elementum. Suspendisse ex sapien, posuere ut nisi sit amet, dapibus faucibus nibh. Aliquam in fringilla erat. Duis cursus aliquet aliquet.</p>
                 <div class="cds--structured-list">
                     <div class="cds--structured-list-thead">
                         <div class="cds--structured-list-row cds--structured-list-row--header-row">
-                            <div class="cds--structured-list-th">Column1</div>
-                            <div class="cds--structured-list-th">Column2</div>
+                            <div class="cds--structured-list-th">Core technologies</div>
+                            <div class="cds--structured-list-th">Frameworks / Libraries / Tool kits / Utilities</div>
                         </div>
                     </div>
                     <div class="cds--structured-list-tbody">
+                        {{range .Site.Params.ownerSkillsSet}}
                         <div class="cds--structured-list-row">
-                            <div class="cds--structured-list-td cds--structured-list-content--nowrap">Row 1</div>
+                            <div class="cds--structured-list-td cds--structured-list-content--nowrap">{{.title}}</div>
                             <div class="cds--structured-list-td">
-                                <div>
-                                    <button class="cds--tag cds--tag--red cds--tag--disabled" disabled>
-                                        <span class="cds--tag__label">Red</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--magenta">
-                                        <span class="cds--tag__label">Magenta</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--purple">
-                                        <span class="cds--tag__label">Purple</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--blue">
-                                        <span class="cds--tag__label">Blue</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--cyan">
-                                        <span class="cds--tag__label">Cyan</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--teal">
-                                        <span class="cds--tag__label">Teal</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--green">
-                                        <span class="cds--tag__label">Green</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--gray">
-                                        <span class="cds--tag__label">Gray</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--cool-gray">
-                                        <span class="cds--tag__label">Cool-Gray</span>
-                                    </button>
-                                    <button class="cds--tag cds--tag--warm-gray">
-                                        <span class="cds--tag__label">Warm-Gray</span>
-                                    </button>
-                                </div>
+
+                                {{range .libs}}
+                                <span >
+                                {{.title}},
+                                </span>
+                                {{end}}
 
                                 <div>
                                 </div>
                             </div>
                         </div>
-                        <div class="cds--structured-list-row">
-                            <div class="cds--structured-list-td cds--structured-list-content--nowrap">Row 2</div>
-                            <div class="cds--structured-list-td">
-                                <a href="#" class="cds--link">Javascript</a>,
-                                <a href="#" class="cds--link">NodeJS</a>,
-                                <a href="#" class="cds--link">NestJS</a>,
-                                <a href="#" class="cds--link">Angular</a>
-                            </div>
-                        </div>
+                        {{end}}
                     </div>
+                </div>
+
+                <div class="bx--col">
+                    <img alt="GitHub contributions" src="https://ghchart.rshah.org/dntzbgh" width="100%">
                 </div>
             </div>
         </div>
     </div>
 </section>
+{{- partial "pages/projects-list.html" (dict "ctx" . "onHome" true) -}}
 {{end}}

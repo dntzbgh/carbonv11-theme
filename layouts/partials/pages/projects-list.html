@@ -1,0 +1,83 @@
+{{ $allProjects:= where .ctx.Site.Pages "Section" "portfolio"   }}
+{{ $projects:=(where $allProjects ".IsPage" true).Reverse}}
+{{ $listPage:=(first 1 (where $allProjects ".IsNode" true)) }}
+{{ $paginator:=.ctx.Paginate $projects 3}}
+<section >
+    {{if .onHome}}
+    <div class="cds--grid" >
+        <div class="cds--row">
+            <div class="cds--col-md-2 cds--col-lg-2 ">
+                <h5 class="section-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            </div>
+            <div class="cds--col-md cds--col-lg">
+                <div class="cds--grid--condensed">
+                    <div class="cds--row cds--row--condensed">
+                        {{range $i,$project:=first 3 $projects}}
+                        <div class="cds--col-lg-8" >
+                            {{- partial "components/card.html"
+                            ( dict
+                            "ctx" .
+                            "media" $project.Params.Media
+                            "heading" $project.Params.Title
+                            "copy" $project.Params.Description
+                            "link" $project.Permalink
+                            "ctaText" "Aenean"
+                            "index" false
+                            )
+                            -}}
+                        </div>
+                        {{end}}
+                        {{range $listPage}}
+                        <div class="cds--col-lg-8 cds--col-md-8">
+                            {{- partial "components/card.html"
+                            ( dict
+                            "ctx" .
+                            "heading" "Nullam fringilla tristique lacus"
+                            "copy" .Params.Description
+                            "link" .Permalink
+                            "ctaText" "Fusce dignissim"
+                            "index" true
+                            )
+                            -}}
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="cds--grid" >
+        <div class="cds--row">
+            <div class="cds--col-lg-2 ">
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            </div>
+            <div class="cds--col">
+                <div class="cds--grid--condensed">
+                    <div class="cds--row" >
+                        {{range $i,$project:=$paginator.Pages}}
+                        <div class="cds--col-lg-12">
+                            {{- partial "components/card-in-card.html"
+                            (dict "ctx" $project
+                            "inverse" (modBool $i 2)
+
+                            ) -}}
+                        </div>
+                        {{end}}
+                    </div>
+                    <div class="cds--row">
+                        <div class="cds--col" ></div>
+
+                        <div class="cds--col" >
+                            {{- partial "components/pagination" (dict "ctx" . "paginator" $paginator) -}}
+                        </div>
+                        <div class="cds--col" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{end}}
+</section>
