@@ -35,4 +35,19 @@
 
 <!--</a>-->
 
-<a class="cds--card" href="#">ceva</a>
+<a class="cds--card" href="#">
+      {{with .media}}
+        <div class="cds--card--media" style="background-image: url('{{.}}')"></div>
+      {{end}}
+    <div class="cds--grid--full-width cds--card--content">
+        <div class="cds--row--narrow">
+            <div class="cds--col">
+                <h1 class="cds--card--content-heading">cevaa</h1>
+            </div>
+            <div class="cds--col">
+                <p>ceva</p>
+            </div>
+        </div>
+    </div>
+
+</a>

@@ -70,5 +70,11 @@
         </div>
     </div>
 </section>
+
+
+
+{{- partial "pages/blog-list.html" (dict "ctx" . "onHome" true) -}}
+
 {{- partial "pages/projects-list.html" (dict "ctx" . "onHome" true) -}}
+
 {{end}}

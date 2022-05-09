@@ -8258,6 +8258,14 @@ a.cds--custom--header__menu-item:active > svg {
   min-height: 10rem;
   max-height: 10rem;
   width: 100%;
+  position: relative;
+}
+.cds--card .cds--card--media {
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 section {
