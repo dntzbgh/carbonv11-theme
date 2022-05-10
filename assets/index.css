@@ -8255,17 +8255,76 @@ a.cds--custom--header__menu-item:active > svg {
 }
 
 .cds--card {
-  min-height: 10rem;
-  max-height: 10rem;
   width: 100%;
   position: relative;
 }
 .cds--card .cds--card--media {
-  background-color: #cccccc;
+  margin: -1rem -1rem 1rem -1rem;
+  background-color: var(--cds-background, #161616);
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.cds--card .cds--card--content {
+  height: 20rem;
+}
+.cds--card .cds--card--content .cds--row {
+  height: 100%;
+  padding: 0 1rem;
+  flex-direction: column;
+}
+.cds--card .cds--card--content .cds--card--content-eyebrow {
+  font-size: var(--cds-expressive-heading-01-font-size, 0.875rem);
+  font-weight: var(--cds-expressive-heading-01-font-weight, 600);
+  line-height: var(--cds-expressive-heading-01-line-height, 1.42857);
+  letter-spacing: var(--cds-expressive-heading-01-letter-spacing, 0.16px);
+}
+.cds--card .cds--card--content .cds--card--content-heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-size: calc(1.25rem +
+      0 *
+      ((100vw - 20rem) / 62)
+    );
+}
+@media (min-width: 82rem) {
+  .cds--card .cds--card--content .cds--card--content-heading {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    font-size: calc(1.25rem +
+      0.25 *
+      ((100vw - 82rem) / 17)
+    );
+  }
+}
+@media (min-width: 99rem) {
+  .cds--card .cds--card--content .cds--card--content-heading {
+    font-size: 1.5rem;
+    line-height: 1.334;
+    font-size: 1.5rem;
+  }
+}
+.cds--card .cds--card--content .cds--card--content-body-copy-text {
+  position: relative;
+  max-height: -webkit-calc(4 * 1.5rem);
+  padding-right: 1.5rem;
+  overflow: hidden;
+  white-space: normal;
+}
+.cds--card .cds--card--content .cds--card--content-cta-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--cds-link-primary, #78a9ff);
+}
+.cds--card .cds--card--content .cds--card--content-cta-row .cds--card--content-cta-text:visited {
+  color: red;
+}
+.cds--card .cds--card--content .cds--card--content-cta-row .cds--card--content-cta-icon {
+  fill: var(--cds-link-primary, #78a9ff);
 }
 
 section {
