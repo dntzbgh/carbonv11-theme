@@ -8261,7 +8261,7 @@ a.cds--custom--header__menu-item:active > svg {
 .cds--card .cds--card--media {
   margin: -1rem -1rem 1rem -1rem;
   background-color: var(--cds-background, #161616);
-  height: 500px;
+  height: 20rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8273,14 +8273,25 @@ a.cds--custom--header__menu-item:active > svg {
   height: 100%;
   padding: 0 1rem;
   flex-direction: column;
+  flex-wrap: nowrap;
 }
-.cds--card .cds--card--content .cds--card--content-eyebrow {
+.cds--card .cds--card--content .cds--row > * {
+  flex-basis: 0;
+  flex-grow: 0;
+}
+.cds--card .cds--card--content .cds--card--content-eyebrow--col {
+  flex: 0.1;
+}
+.cds--card .cds--card--content .cds--card--content-eyebrow--col .cds--card--content-eyebrow {
   font-size: var(--cds-expressive-heading-01-font-size, 0.875rem);
   font-weight: var(--cds-expressive-heading-01-font-weight, 600);
   line-height: var(--cds-expressive-heading-01-line-height, 1.42857);
   letter-spacing: var(--cds-expressive-heading-01-letter-spacing, 0.16px);
 }
-.cds--card .cds--card--content .cds--card--content-heading {
+.cds--card .cds--card--content .cds--card--content-heading--col {
+  flex: 0.7;
+}
+.cds--card .cds--card--content .cds--card--content-heading--col .cds--card--content-heading {
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.4;
@@ -8291,7 +8302,7 @@ a.cds--custom--header__menu-item:active > svg {
     );
 }
 @media (min-width: 82rem) {
-  .cds--card .cds--card--content .cds--card--content-heading {
+  .cds--card .cds--card--content .cds--card--content-heading--col .cds--card--content-heading {
     font-size: 1.25rem;
     line-height: 1.25;
     font-size: calc(1.25rem +
@@ -8301,17 +8312,16 @@ a.cds--custom--header__menu-item:active > svg {
   }
 }
 @media (min-width: 99rem) {
-  .cds--card .cds--card--content .cds--card--content-heading {
+  .cds--card .cds--card--content .cds--card--content-heading--col .cds--card--content-heading {
     font-size: 1.5rem;
     line-height: 1.334;
     font-size: 1.5rem;
   }
 }
-.cds--card .cds--card--content .cds--card--content-body-copy-text {
-  position: relative;
-  max-height: -webkit-calc(4 * 1.5rem);
-  padding-right: 1.5rem;
-  overflow: hidden;
+.cds--card .cds--card--content .cds--card--content-body-copy--row {
+  flex: 1;
+}
+.cds--card .cds--card--content .cds--card--content-body-copy--row .cds--card--content-body-copy-text {
   white-space: normal;
 }
 .cds--card .cds--card--content .cds--card--content-cta-row {
