@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section >
+  <div class="bx--grid post">
+    <div class="bx--row">
+      <div class="bx--col-lg-2">
+        <h5>Table of contents</h5>
+        {{ .TableOfContents }}
+      </div>
+      <div class="bx--col-lg">
+        {{.Content}}
+        <hr class="bx--hr">
+      </div>
+      <div class="bx--col-lg-2 post-right-side">
+        <div class="bx--grid--condensed">
+          <div class="bx--row">
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bx--grid">
+    <div class="bx--row">
+      <div class="bx--col-lg-2">
+        <h5>Etiam bibendum nec</h5>
+      </div>
+      <div class="bx--col-lg">
+        <div class="bx--grid--condensed">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

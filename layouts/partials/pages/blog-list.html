@@ -7,14 +7,14 @@
 <section >
     <div class="cds--grid" >
         <div class="cds--row">
-            <div class="cds--col-lg-2">
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            <div class="cds--col-lg-3">
+                <h5 class="section-heading">Most recent blog posts with interesting topics</h5>
             </div>
             <div class="cds--col">
                 <div class="cds--grid--condensed">
                     <div class="cds--row">
                         {{range first 5 $blogPosts}}
-                        <div class="cds--col-md-4 cds--col-lg-5 ">
+                        <div class="cds--col-md-4 cds--col-lg-8 cds--col-xlg-5">
                             {{- partial "components/card.html"
                             ( dict
                             "ctx" .
@@ -29,11 +29,11 @@
                         {{end}}
                         {{if gt (len $blogPosts) 5}}
                         {{range $listPage}}
-                        <div class="cds--col-md-5 cds--col-lg-5 cds--col-xlg-4">
+                        <div class="cds--col-md-4 cds--col-lg-8 cds--col-xlg-5">
                             {{- partial "components/card.html"
                             ( dict
                             "ctx" .
-                            "heading" "Nunc lobortis"
+                            "heading" "Read all blog posts"
                             "copy" .Params.Description
                             "link" .Permalink
                             "ctaText" "Nullam id efficitur"
@@ -68,7 +68,7 @@
                         <div class="cds--row list-content-row" >
                             {{if gt (len $blogPosts) 0}}
                             {{range $paginator.Pages}}
-                            <div class=" cds--col-md-5 cds--col-lg-5 cds--col-xlg-4">
+                            <div class=" cds--col-md-4 cds--col-lg-5">
                                 {{- partial "components/card.html"
                                 ( dict
                                 "ctx" .
