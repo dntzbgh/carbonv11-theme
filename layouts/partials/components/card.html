@@ -35,7 +35,7 @@
 
 <!--</a>-->
 
-<a class="cds--card {{if .index }}cds--card--index {{end}}" href="{{.link}}">
+<a class="cds--card cds--card--clickable {{if .index }}cds--card--index {{end}}" href="{{.link}}">
       {{with .media}}
         <div class="cds--card--media" style="background-image: url('{{.}}')"></div>
       {{end}}

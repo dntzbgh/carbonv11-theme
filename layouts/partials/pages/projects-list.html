@@ -6,15 +6,15 @@
     {{if .onHome}}
     <div class="cds--grid" >
         <div class="cds--row">
-            <div class="cds--col-md-2 cds--col-lg-2 ">
+            <div class="cds--col-lg-3 ">
                 <h5 class="section-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
             </div>
             <div class="cds--col-md cds--col-lg">
                 <div class="cds--grid--condensed">
                     <div class="cds--row cds--row--condensed">
                         {{range $i,$project:=first 3 $projects}}
-                        <div class="cds--col-lg-8" >
-                            {{- partial "components/card.html"
+                        <div class="cds--col-md-8" >
+                            {{- partial "components/feature-card.html"
                             ( dict
                             "ctx" .
                             "media" $project.Params.Media

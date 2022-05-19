@@ -7000,46 +7000,46 @@ optgroup.cds--select-optgroup:disabled,
   background-color: var(--cds-layer);
 }
 
-.cds--tile--clickable, .cds--card,
+.cds--tile--clickable, .cds--card.cds--card--clickable,
 .cds--tile--selectable {
   cursor: pointer;
   transition: 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
 }
-.cds--tile--clickable:hover, .cds--card:hover,
+.cds--tile--clickable:hover, .cds--card.cds--card--clickable:hover,
 .cds--tile--selectable:hover {
   background: var(--cds-layer-hover);
 }
 
-.cds--tile--clickable, .cds--card {
+.cds--tile--clickable, .cds--card.cds--card--clickable {
   color: var(--cds-text-primary, #f4f4f4);
   text-decoration: none;
 }
-.cds--tile--clickable html, .cds--card html {
+.cds--tile--clickable html, .cds--card.cds--card--clickable html {
   font-size: 100%;
 }
-.cds--tile--clickable body, .cds--card body {
+.cds--tile--clickable body, .cds--card.cds--card--clickable body {
   font-weight: 400;
   font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-.cds--tile--clickable code, .cds--card code {
+.cds--tile--clickable code, .cds--card.cds--card--clickable code {
   font-family: 'IBM Plex Mono', system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', monospace;
 }
-.cds--tile--clickable strong, .cds--card strong {
+.cds--tile--clickable strong, .cds--card.cds--card--clickable strong {
   font-weight: 600;
 }
-.cds--tile--clickable:focus, .cds--card:focus {
+.cds--tile--clickable:focus, .cds--card.cds--card--clickable:focus {
   outline: 2px solid var(--cds-focus, #ffffff);
   outline-offset: -2px;
 }
 @media screen and (prefers-contrast) {
-  .cds--tile--clickable:focus, .cds--card:focus {
+  .cds--tile--clickable:focus, .cds--card.cds--card--clickable:focus {
     outline-style: dotted;
   }
 }
-.cds--tile--clickable:hover .cds--tile__checkmark, .cds--card:hover .cds--tile__checkmark, .cds--tile--clickable:focus .cds--tile__checkmark, .cds--card:focus .cds--tile__checkmark {
+.cds--tile--clickable:hover .cds--tile__checkmark, .cds--card.cds--card--clickable:hover .cds--tile__checkmark, .cds--tile--clickable:focus .cds--tile__checkmark, .cds--card.cds--card--clickable:focus .cds--tile__checkmark {
   opacity: 1;
 }
 
@@ -7047,17 +7047,17 @@ optgroup.cds--select-optgroup:disabled,
   border: 0;
 }
 
-.cds--tile--clickable:hover, .cds--card:hover,
+.cds--tile--clickable:hover, .cds--card.cds--card--clickable:hover,
 .cds--tile--clickable:active,
-.cds--card:active,
+.cds--card.cds--card--clickable:active,
 .cds--tile--clickable:visited,
-.cds--card:visited,
+.cds--card.cds--card--clickable:visited,
 .cds--tile--clickable:visited:hover {
   color: var(--cds-text-primary, #f4f4f4);
   text-decoration: none;
 }
 
-.cds--tile--clickable.cds--link--disabled, .cds--link--disabled.cds--card,
+.cds--tile--clickable.cds--link--disabled, .cds--link--disabled.cds--card.cds--card--clickable,
 .cds--tile--clickable:hover.cds--link--disabled {
   display: block;
   padding: 1rem;
@@ -8260,7 +8260,6 @@ a.cds--custom--header__menu-item:active > svg {
   position: relative;
 }
 .cds--card .cds--card--media {
-  margin: -1rem -1rem 1rem -1rem;
   background-color: var(--cds-background, #161616);
   height: 20rem;
   background-position: center;
@@ -8361,6 +8360,15 @@ a.cds--custom--header__menu-item:active > svg {
 }
 .cds--card.cds--card--index .cds--card--content-heading--col {
   flex: 5;
+}
+.cds--card.cds--feature--card .cds--card--media {
+  margin: -1rem 0 -1rem -1rem;
+}
+.cds--card.cds--feature--card .cds--card--content .cds--row {
+  padding: 0 2rem;
+}
+.cds--card.cds--feature--card .cds--card--content .cds--row > * {
+  flex: 0;
 }
 
 section {
