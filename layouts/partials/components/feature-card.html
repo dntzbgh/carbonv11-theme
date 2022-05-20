@@ -2,15 +2,20 @@
     <div class="cds--grid--condensed">
         <div class="cds--row">
             {{with .media}}
-            <div class="cds--col-sm-8 cds--col-md  " >
-                <div class="cds--card--media" ></div>
+<!--            todo this needs to be done with img maybe
+                    for now make it with div background-->
+            <div class="cds--col-sm-8 cds--col-md  cds--card--media-col" >
+                <div class="cds--card--media--wrapper">
+                    <img class="cds--card--media" src="{{.}}" intrinsicsize="400x400" />
+                </div>
+
             </div>
             {{end}}
             <div class="cds--col-sm-8 cds--col-md  cds--card--content">
                 <div class="cds--grid--full-width">
-                    <div class="cds--row">
+                    <div class="cds--row ">
                         <div class="cds--col cds--card--content-eyebrow--col">
-                            <p class="cds--card--content-eyebrow">Blog post</p>
+                            <p class="cds--card--content-eyebrow">Project</p>
                         </div>
                         <div class="cds--col cds--card--content-heading--col">
                             <h1 class="cds--card--content-heading">

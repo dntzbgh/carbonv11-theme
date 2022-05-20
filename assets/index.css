@@ -8261,7 +8261,6 @@ a.cds--custom--header__menu-item:active > svg {
 }
 .cds--card .cds--card--media {
   background-color: var(--cds-background, #161616);
-  height: 20rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8361,8 +8360,24 @@ a.cds--custom--header__menu-item:active > svg {
 .cds--card.cds--card--index .cds--card--content-heading--col {
   flex: 5;
 }
-.cds--card.cds--feature--card .cds--card--media {
-  margin: -1rem 0 -1rem -1rem;
+.cds--card.cds--feature--card .cds--card--media-col {
+  position: relative;
+  flex-direction: row;
+}
+.cds--card.cds--feature--card .cds--card--media-col .cds--card--media--wrapper {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  bottom: -1rem;
+  left: -1rem;
+  background: red;
+}
+.cds--card.cds--feature--card .cds--card--media-col .cds--card--media--wrapper .cds--card--media {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 25rem;
 }
 .cds--card.cds--feature--card .cds--card--content .cds--row {
   padding: 0 2rem;
