@@ -8398,4 +8398,22 @@ section .section-heading {
   margin-bottom: 0.5rem;
 }
 
+#skills-section .cds--structured-list-th, #skills-section .cds--structured-list-td {
+  padding-left: 0;
+}
+
+footer {
+  background-color: var(--cds-background, #161616);
+  color: var(--cds-text-primary, #f4f4f4);
+}
+footer .cds--grid {
+  height: 5rem;
+}
+footer .cds--grid .cds--row {
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=index.css.map */
