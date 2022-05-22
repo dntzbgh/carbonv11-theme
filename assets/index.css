@@ -8370,7 +8370,7 @@ a.cds--custom--header__menu-item:active > svg {
   right: 0;
   bottom: -1rem;
   left: -1rem;
-  background: red;
+  background: var(--cds-background, #161616);
 }
 .cds--card.cds--feature--card .cds--card--media-col .cds--card--media--wrapper .cds--card--media {
   width: 100%;
@@ -8381,9 +8381,6 @@ a.cds--custom--header__menu-item:active > svg {
 }
 .cds--card.cds--feature--card .cds--card--content .cds--row {
   padding: 0 2rem;
-}
-.cds--card.cds--feature--card .cds--card--content .cds--row > * {
-  flex: 0;
 }
 
 section {

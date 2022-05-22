@@ -14,9 +14,10 @@
                     <div class="cds--row cds--row--condensed">
                         {{range $i,$project:=first 3 $projects}}
                         <div class="cds--col-md-8" >
-                            {{- partial "components/feature-card.html"
+                            {{- partial "components/card.html"
                             ( dict
                             "ctx" .
+                            "ctype" "cds--feature--card"
                             "media" $project.Params.Media
                             "heading" $project.Params.Title
                             "copy" $project.Params.Description
@@ -32,6 +33,7 @@
                             {{- partial "components/card.html"
                             ( dict
                             "ctx" .
+                            "ctype" "cds--feature--card"
                             "heading" "Nullam fringilla tristique lacus"
                             "copy" .Params.Description
                             "link" .Permalink

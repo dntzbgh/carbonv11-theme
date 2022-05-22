@@ -1,1 +1,29 @@
-asdw
+Components for this theme:
+* Normal card
+```
+{{- partial "components/card.html"
+    ( dict
+    "ctx" .
+    "media" false
+    "heading" .Params.Title
+    "copy" .Params.Description
+    "link" .Permalink
+    "ctaText" "Nullam id efficitur"
+    )
+-}}
+```
+
+* Feature card
+```
+{{- partial "components/feature-card.html"
+    ( dict
+    "ctx" .
+    "media" $project.Params.Media
+    "heading" $project.Params.Title
+    "copy" $project.Params.Description
+    "link" $project.Permalink
+    "ctaText" "Aenean"
+    "index" false
+    )
+-}}
+```

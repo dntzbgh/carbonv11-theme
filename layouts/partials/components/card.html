@@ -1,69 +1,51 @@
-<!--<a data-tile="clickable" class="cds&#45;&#45;tile cds&#45;&#45;tile&#45;&#45;clickable card {{if .index}}index{{end}}" tabindex="0" href="{{.link}}" style="{{if .index}}height:100%;{{end}}">-->
-<!--  {{with .media}}-->
-<!--  <div class="media" style="background-image: url('{{.}}')"></div>-->
-<!--  {{end}}-->
-
-<!--  <div class="cds&#45;&#45;grid&#45;&#45;full-width " style="{{with .media}} padding-top: 1rem;{{end}} {{if .index}}height:100%;{{end}}" >-->
-<!--    <div class="bx-row content" style="{{if .index}}height:100%;{{end}}">-->
-<!--      {{if .index}}-->
-<!--      <div class="cds&#45;&#45;col heading-col" style="min-height: {{if .media}}60rem{{else}}0{{end}};">-->
-<!--        &lt;!&ndash;                <div style="&#45;&#45;webkit-line-clamp: 1;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;&#45;&#45;webkit-box-orient: vertical;">&ndash;&gt;-->
-<!--        &lt;!&ndash;                    &ndash;&gt;-->
-<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
-<!--        <h1 class="heading " >{{.heading}}</h1>-->
-<!--        <svg class="icon" width="24" height="24" viewBox="0 0 32 32">-->
-<!--          <polygon points="18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6"/>-->
-<!--        </svg>-->
-<!--      </div>-->
-<!--      {{else}}-->
-<!--      <div class="cds&#45;&#45;col">-->
-<!--        <h1 class="heading">{{.heading | truncate 60}}</h1>-->
-<!--      </div>-->
-<!--      <div class="cds&#45;&#45;col copy-col" >-->
-<!--        <h4 class="copy">{{.copy}}</h4>-->
-<!--      </div>-->
-<!--      <div class="cds&#45;&#45;col cta-col">-->
-<!--        <h5 class="cds&#45;&#45;link cta">{{.ctaText}}</h5>-->
-<!--        <svg  width="24" height="24" viewBox="0 0 32 32">-->
-<!--          <polygon points="18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6"/>-->
-<!--        </svg>-->
-<!--      </div>-->
-<!--      {{end}}-->
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--</a>-->
-
-<a class="cds--card cds--card--clickable {{if .index }}cds--card--index {{end}}" href="{{.link}}">
-      {{with .media}}
-        <div class="cds--card--media" style="background-image: url('{{.}}')"></div>
-      {{end}}
-    <div class="cds--grid--full-width cds--card--content">
+<a class="cds--card cds--card--clickable
+ {{with .index }}cds--card--index {{end}}
+ {{with .ctype}} {{.}} {{end}}
+"
+   href="{{.link}}">
+    <div class="cds--grid--condensed">
         <div class="cds--row">
-            <div class="cds--col cds--card--content-eyebrow--col">
-                <p class="cds--card--content-eyebrow">Blog post</p>
-            </div>
-            <div class="cds--col cds--card--content-heading--col">
-                <h1 class="cds--card--content-heading">
-                    {{.heading | truncate 70 }}
-                </h1>
-            </div>
-            <div class="cds--col cds--card--content-body-copy--row">
-                <p class="cds--card--content-body-copy-text">
-                    {{.copy | truncate 150}}
-                </p>
-            </div>
-            <div class="cds--col cds--card--content-cta-row">
-<!--                <svg class="cds&#45;&#45;card&#45;&#45;content-cta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">-->
-<!--                    <polygon points="14 21.414 9 16.413 10.413 15 14 18.586 21.585 11 23 12.415 14 21.414"/>-->
-<!--                    <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/>-->
-<!--                </svg>-->
+            {{with .media}}
+            <!--            todo this needs to be done with img maybe
+                                for now make it with div background-->
+<!--                            also make sure to add picture and video tag -->
+            <div class="cds--col-sm-8 cds--col-md  cds--card--media-col" >
+                <div class="cds--card--media--wrapper">
+                    <img class="cds--card--media" src="{{.}}"  />
+                </div>
 
-                <p class="cds--card--content-cta-text">{{.ctaText}}</p>
-                <svg class="cds--card--content-cta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
-                    <polygon points="18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6"/>
-                </svg>
+            </div>
+            {{end}}
+            <div class="cds--col-sm-8 cds--col-md  cds--card--content">
+                <div class="cds--grid--full-width">
+                    <div class="cds--row ">
+                        <div class="cds--col cds--card--content-eyebrow--col">
+                            <p class="cds--card--content-eyebrow">Project</p>
+                        </div>
+                        <div class="cds--col cds--card--content-heading--col">
+                            <h1 class="cds--card--content-heading">
+                                {{.heading }}
+                            </h1>
+                        </div>
+                        <div class="cds--col cds--card--content-body-copy--row">
+                            <p class="cds--card--content-body-copy-text">
+                                {{.copy | truncate 150}}
+                            </p>
+                        </div>
+                        <div class="cds--col cds--card--content-cta-row">
+                            <!--                <svg class="cds&#45;&#45;card&#45;&#45;content-cta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">-->
+                            <!--                    <polygon points="14 21.414 9 16.413 10.413 15 14 18.586 21.585 11 23 12.415 14 21.414"/>-->
+                            <!--                    <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/>-->
+                            <!--                </svg>-->
+
+                            <p class="cds--card--content-cta-text">{{.ctaText}}</p>
+                            <svg class="cds--card--content-cta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                                <polygon points="18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
