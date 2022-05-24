@@ -1,60 +1,50 @@
-<div class="cds--form-item">
-          <div class="cds--dropdown__wrapper cds--dropdown__wrapper--inline">
-            <span id="example-ap3t91wclrj-label" class="cds--label {{ if not .IsTranslated }}cds--label--disabled{{end}}">Language</span>
-            <div data-dropdown data-dropdown-type="inline"  data-value class="{{ if not .IsTranslated }}cds--tooltip__trigger cds--tooltip--a11y cds--tooltip--top {{end}} cds--dropdown cds--dropdown--inline cds--dropdown--up cds--dropdown--light {{ if not .IsTranslated }}cds--dropdown--disabled{{end}}">
-              <button class="cds--dropdown-text " aria-haspopup="true" aria-expanded="false" aria-controls="example-ap3t91wclrj-menu" aria-labelledby="example-ap3t91wclrj-label example-ap3t91wclrj-value" type="button"
-                      {{ if not .IsTranslated }}disabled aria-disabled="true" {{end}}>
-                <span class="cds--dropdown-text__inner" id="example-ap3t91wclrj-value">{{.Site.Language.LanguageName}}</span>
-                {{ if .IsTranslated }}<span class="cds--dropdown__arrow-container">
-                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="cds--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg>{{end}}
-                </span>
+<!--<div class="cds&#45;&#45;form-item">-->
+<!--    <div class="cds&#45;&#45;dropdown__wrapper cds&#45;&#45;dropdown__wrapper&#45;&#45;inline">-->
+<!--        <span id="example-ap3t91wclrj-label" class="cds&#45;&#45;label {{ if not .IsTranslated }}cds&#45;&#45;label&#45;&#45;disabled{{end}}">Language</span>-->
+<!--        <div data-dropdown data-dropdown-type="inline" data-value-->
+<!--             class="{{ if not .IsTranslated }}cds&#45;&#45;tooltip__trigger cds&#45;&#45;tooltip&#45;&#45;a11y cds&#45;&#45;tooltip&#45;&#45;top {{end}} cds&#45;&#45;dropdown cds&#45;&#45;dropdown&#45;&#45;inline cds&#45;&#45;dropdown&#45;&#45;up cds&#45;&#45;dropdown&#45;&#45;light {{ if not .IsTranslated }}cds&#45;&#45;dropdown&#45;&#45;disabled{{end}}">-->
+<!--            <button class="cds&#45;&#45;dropdown-text " aria-haspopup="true" aria-expanded="false"-->
+<!--                    aria-controls="example-ap3t91wclrj-menu"-->
+<!--                    aria-labelledby="example-ap3t91wclrj-label example-ap3t91wclrj-value" type="button"-->
+<!--                    {{ if not .IsTranslated }}disabled aria-disabled="true" {{end}}>-->
+<!--                <span class="cds&#45;&#45;dropdown-text__inner"-->
+<!--                      id="example-ap3t91wclrj-value">{{.Site.Language.LanguageName}}</span>-->
+<!--                {{ if .IsTranslated }}<span class="cds&#45;&#45;dropdown__arrow-container">-->
+<!--                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"-->
+<!--                         xmlns="http://www.w3.org/2000/svg" class="cds&#45;&#45;dropdown__arrow" width="16" height="16"-->
+<!--                         viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg>{{end}}-->
+<!--                </span>-->
 
 
-              </button>
-              {{ if not .IsTranslated }}
-              <span class="cds--assistive-text">Suspendisse fermentum est ac commodo elementum.</span>
-              {{end}}
-              {{ if .IsTranslated }}
-              <ul class="cds--dropdown-list cds--dropdown--open" id="example-ap3t91wclrj-menu" role="menu" tabindex="0" id="example-ap3t91wclrj-menu" aria-hidden="true" wh-menu-anchor="left" aria-labelledby="example-ap3t91wclrj-label">
-                {{ range .Translations }}
-                <li data-option data-value="all" class="cds--dropdown-item" title="{{ .Language.LanguageName }}">
-                  <a class="cds--dropdown-link" href="{{ .Permalink }}" tabindex="-1" role="menuitemradio" aria-checked="true" >{{ .Language.LanguageName }}</a>
-                </li>
+<!--            </button>-->
+<!--            {{ if not .IsTranslated }}-->
+<!--            <span class="cds&#45;&#45;assistive-text">Suspendisse fermentum est ac commodo elementum.</span>-->
+<!--            {{end}}-->
+<!--            {{ if .IsTranslated }}-->
+<!--            <ul class="cds&#45;&#45;dropdown-list cds&#45;&#45;dropdown&#45;&#45;open" id="example-ap3t91wclrj-menu" role="menu" tabindex="0"-->
+<!--                id="example-ap3t91wclrj-menu" aria-hidden="true" wh-menu-anchor="left"-->
+<!--                aria-labelledby="example-ap3t91wclrj-label">-->
+<!--                {{ range .Translations }}-->
+<!--                <li data-option data-value="all" class="cds&#45;&#45;dropdown-item" title="{{ .Language.LanguageName }}">-->
+<!--                    <a class="cds&#45;&#45;dropdown-link" href="{{ .Permalink }}" tabindex="-1" role="menuitemradio"-->
+<!--                       aria-checked="true">{{ .Language.LanguageName }}</a>-->
+<!--                </li>-->
+<!--                {{end}}-->
+<!--            </ul>-->
+<!--            {{end}}-->
+
+<!--        </div>-->
+
+
+<div >
+    <p style="display: inline-block">Languages: {{.Site.Language.LanguageName}}</p>
+                {{ if .IsTranslated }}
+
+                    {{ range .Translations }}
+                        <a class="cds--link cds--link--inline" href="{{ .Permalink }}" tabindex="-1" role="menuitemradio"
+                           aria-checked="true">{{ .Language.LanguageName }}</a>
+                    {{end}}
+
                 {{end}}
-              </ul>
-              {{end}}
 
-            </div>
-
-    <!--      </div>-->
-    <!--<form action="/" method="GET">-->
-    <!--    <div class="cds&#45;&#45;form-item">-->
-    <!--        <div class="cds&#45;&#45;select cds&#45;&#45;select&#45;&#45;inline">-->
-    <!--            <label for="select-1" class="cds&#45;&#45;label ">Current language: </label>-->
-    <!--            <div class="cds&#45;&#45;select-input&#45;&#45;inline__wrapper">-->
-    <!--                <div class="cds&#45;&#45;select-input__wrapper">-->
-    <!--                    <select id="select-1" class="cds&#45;&#45;select-input" name="localhost">-->
-    <!--                        <option class="cds&#45;&#45;select-option" value="/en" >Choose an option-->
-    <!--                        </option>-->
-    <!--                        {{ if .IsTranslated }}-->
-    <!--                        {{ range .Translations }}-->
-    <!--                        <option class="cds&#45;&#45;select-option" value="ro">{{ .Language.LanguageName }}</option>-->
-    <!--                        {{end}}-->
-    <!--                        {{end}}-->
-
-
-    <!--                    </select>-->
-    <!--                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"-->
-    <!--                         fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"-->
-    <!--                         class="cds&#45;&#45;select__arrow">-->
-    <!--                        <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>-->
-    <!--                    </svg>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="cds&#45;&#45;form__helper-text">-->
-    <!--                <button class="cds&#45;&#45;btn cds&#45;&#45;btn&#45;&#45;secondary" type="submit">Change</button>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</form>-->
 </div>

@@ -27,3 +27,7 @@ Components for this theme:
     )
 -}}
 ```
+
+sass modules/carbon/packages/styles/index.scss assets/index.css --trace --load-path=modules/carbon/node_modules
+
+
