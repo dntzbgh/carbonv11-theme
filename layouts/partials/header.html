@@ -65,7 +65,7 @@
     <div class="cds--custom--header__global">
         {{range .Site.Params.ownerSocialLinks}}
         <a class="cds--custom--header__menu-trigger cds--custom--header__action" rel="noopener noreferrer"
-           aria-label="Action 1" href="{{.link}}" target="_blank"
+           aria-label="Action 1" href="{{if in .link "@"}}mailto:{{.link}}{{else}}{{.link}}{{end}}" target="_blank"
                 title="Action 1">
             <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  width="24" height="24" viewBox="0 0 32 32">
                 {{safeHTML .path}}

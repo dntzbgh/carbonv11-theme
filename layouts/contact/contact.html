@@ -1,0 +1,65 @@
+{{define "main"}}
+<section>
+    <div class="cds--grid">
+        <div class="cds--row">
+            <div class="cds--col-lg-3">
+                <h5 class="section-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            <p>Donec nibh neque, auctor id auctor eu, faucibus vitae orci?
+                Morbi sodales elit porttitor lacus bibendum scelerisque.</p>
+            </div>
+            <div class="cds--col-md cds--col-lg">
+                <div class="cds--grid--condensed">
+                    <div class="cds--row  cds--row--condensed">
+                        {{range .Site.Params.ownerSocialLinks}}
+                        <div class="cds--col-lg cds--col-md-4 cds--col-sm-4">
+                            {{- partial "components/link-card.html"
+                            (dict
+                            "ctx" .
+                            "heading" (print "Via " .name | title)
+                            "external" true
+                            "icon" .path
+                            "link" .link
+                            ) -}}
+                        </div>
+                        {{end}}
+                        <div class="cds--col-lg-max cds--col-md-8">
+                            <div class="cds--tile form-wrapper">
+                                <h4 class="heading">Via Message</h4>
+                                <form>
+                                    <div class="cds--grid--full-width">
+                                        <div class="cds--row">
+                                            <div class="cds--col-md">
+                                                <div class="cds--form-item">
+                                                    <label for="text-input-3" class="cds--label">Name</label>
+                                                    <input id="text-input-3" type="text" required="" class="cds--text-input cds--text-input--light" placeholder="ex. Juan">
+                                                </div>
+                                            </div>
+                                            <div class="cds--col-md">
+                                                <div class="cds--form-item">
+                                                    <label for="text-input-4" class="cds--label">Email</label>
+                                                    <input id="text-input-4" type="email" required="" class="cds--text-input cds--text-input--light" placeholder="ex. juan@gmail.com">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cds--form-item" style="padding-top: 0.5rem;">
+                                        <label for="text-area-2" class="cds--label">Message</label>
+                                        <textarea id="text-area-2" class="cds--text-area cds--text-area--light" required="" rows="6" cols="50" placeholder="ex.  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus..."></textarea>
+                                    </div>
+                                    <div class="cds--form-item">
+                                        <button class="cds--btn cds--btn--primary" type="submit">Vivamus ultricies maximus</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{{end}}
